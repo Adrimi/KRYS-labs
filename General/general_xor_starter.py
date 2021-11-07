@@ -1,5 +1,4 @@
 from pwn import xor
-from Crypto.Util.number import long_to_bytes
 
 input = "label"
 
