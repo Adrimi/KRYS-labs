@@ -1,6 +1,5 @@
 from Crypto.PublicKey import RSA
 import subprocess
-# from ssl import 
 
 filepath = 'General/bruce_rsa.pub'
 result = subprocess.run(['ssh-keygen', '-f' , filepath, '-e', '-m', 'pem'], stdout=subprocess.PIPE)
