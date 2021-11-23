@@ -1,5 +1,5 @@
-from functools import reduce
 from typing import List
+from common import mul
 
 
 def main():
@@ -35,10 +35,6 @@ def solve_x(b, n):
         products.append(b_i * N_i * x)
 
     return sum(products)
-
-
-def mul(list):
-    return reduce(lambda a, b: a * b, list)
 
 
 if __name__ == '__main__':
