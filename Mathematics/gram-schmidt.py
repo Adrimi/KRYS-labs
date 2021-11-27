@@ -11,47 +11,25 @@ def main():
 
     result = gram_schmidt(vectors_v)
 
-    print(result)
-    print('%.5f' % result[-1][2])
+    print('%.5f' % result[-1][1])
 
 
 def gram_schmidt(input_vectors):
-    v1 = input_vectors[0]
-    u1 = v1
-    e1 = vector_normalize(u1)
+    ouptut_vectors = []
 
-    # step 2
+    for v in input_vectors:
+        products = []
+        for temp in ouptut_vectors:
+            products.append(vector_projection(temp, v))
 
-    v2 = input_vectors[1]
-    u2 = vector_substract(v2, vector_projection(u1, v2))
-    e2 = vector_normalize(u2)
+        if len(products) > 0:
+            u = vector_substract(v, vector_sum(products))
+        else:
+            u = v
 
-    # step 3
+        ouptut_vectors.append(u)
 
-    v3 = input_vectors[2]
-    u3 = vector_substract(
-        vector_substract(
-            v3, vector_projection(u1, v3)
-        ),
-        vector_projection(u2, v3)
-    )
-    e3 = vector_normalize(u3)
-
-    # step 4
-
-    v4 = input_vectors[3]
-    u4 = vector_substract(
-        vector_substract(
-            vector_substract(
-                v4, vector_projection(u1, v4)
-            ),
-            vector_projection(u2, v4)
-        ),
-        vector_projection(u3, v4)
-    )
-    e4 = vector_normalize(u4)
-
-    return [e1, e2, e3, e4]
+    return ouptut_vectors
 
 
 if __name__ == '__main__':
