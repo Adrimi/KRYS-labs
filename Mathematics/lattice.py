@@ -3,7 +3,6 @@
 # https://pl.wikipedia.org/wiki/Macierz
 #
 # Wyznacznik macierzy stopnia trzeciego można obliczyć za pomocą reguły Sarrusa
-#  Twierdzenie Cauchy’ego o wyznacznikach mówi, że wyznacznik iloczynu macierzy jest równy iloczynowi ich wyznaczników, {\displaystyle \det(\mathbf {AB} )=\det(\mathbf {A} )\det(\mathbf {B} ).}{\displaystyle \det(\mathbf {AB} )=\det(\mathbf {A} )\det(\mathbf {B} ).}\
 
 # https://pl.wikipedia.org/wiki/Regu%C5%82a_Sarrusa
 

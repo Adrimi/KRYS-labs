@@ -39,6 +39,17 @@ def vector_projection(u, v) -> List[float]:
 
 # algorithms
 
+def quadratic_residues(p):
+    list = []
+
+    for x in range(1, p-1):
+        residue = x*x % p
+        if not residue in [x[1] for x in list]:
+            list.append((x, residue))
+
+    return list
+
+
 def legendre(x, p):
     if (pow(x, (p-1)//2, p)) == 1:
         return 1
