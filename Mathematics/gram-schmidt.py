@@ -11,7 +11,7 @@ def main():
 
     result = gram_schmidt(vectors_v)
 
-    print('%.5f' % result[-1][1])
+    print('Solution is %.5f' % result[-1][1])
 
 
 def gram_schmidt(input_vectors):
