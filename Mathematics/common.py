@@ -39,6 +39,13 @@ def vector_projection(u, v) -> List[float]:
 
 # algorithms
 
+def legendre(x, p):
+    if (pow(x, (p-1)//2, p)) == 1:
+        return 1
+    else:
+        return 0
+
+
 def vector_gaussian(v1, v2):
     while True:
         if vector_size(v2) < vector_size(v1):
