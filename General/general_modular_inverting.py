@@ -5,6 +5,7 @@ def gcd(a, b):
     a = t
   return a
 
+
 def invert(a, b):
   for i in range(1, b):
     if ((a * i) % b) == 1:
@@ -16,4 +17,3 @@ def invert(a, b):
 a = 3
 b = 13
 print(invert(a, b))
-

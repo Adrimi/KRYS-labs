@@ -10,6 +10,6 @@ for index, byte in enumerate(range(0, 127)):
   krypto = ""
   for i in output:
     krypto = krypto + "".join(chr(i))
-  
+
   if krypto.startswith('crypto'):
     print(krypto)
