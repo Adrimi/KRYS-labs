@@ -19,3 +19,7 @@ def asciiListToString(list):
 
 def bitwiseXOR(a, b):
   return (np.array(a) ^ np.array(b)).tolist()
+
+
+def byte_xor(ba1, ba2):
+  return bytes([a ^ b for a, b in zip(ba1, ba2)])
