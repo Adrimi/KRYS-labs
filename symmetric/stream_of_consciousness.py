@@ -1,7 +1,11 @@
 import requests
 from itertools import combinations  # https://stackoverflow.com/a/36429743/10044077
-from binascii import hexlify, unhexlify
 from commons import byte_xor
+
+# D(P1) ^ K = C1
+# D(P2) ^ K = C2
+
+# E(P1) ^ d2 = c1 ^ c2
 
 
 def main():

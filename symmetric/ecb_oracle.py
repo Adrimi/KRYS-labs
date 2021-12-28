@@ -1,19 +1,3 @@
-"""
-Logic is to take a reference block and compare with a block iterating ascii
-Assume flag is      : crypto{wow}
-Elignment is        : crypto{w ow}xxxxx (x is padding)
-Send 'A'*15 now
-the elignment is    : AAAAAAAA AAAAAAAc rypto{wo w}xxxxxx
-                      -----------------
-                       reference block
-Send 'A'*15+'a-z'
-now the elignment
-is                  : AAAAAAAA AAAAAAAAa crypto{w ow}xxxxx
-                      ------------------
-                       identifier block
-if reference block matches identifier block then we got the first letter. So this way we can obtain total flag ;)
-"""
-
 from commons import *
 import requests
 import string
@@ -57,3 +41,18 @@ def hex(p):
 
 if __name__ == '__main__':
   main()
+"""
+Logic is to take a reference block and compare with a block iterating ascii
+Assume flag is      : crypto{wow}
+Elignment is        : crypto{w ow}xxxxx (x is padding)
+Send 'A'*15 now
+the elignment is    : AAAAAAAA AAAAAAAc rypto{wo w}xxxxxx
+                      -----------------
+                       reference block
+Send 'A'*15+'a-z'
+now the elignment
+is                  : AAAAAAAA AAAAAAAAa crypto{w ow}xxxxx
+                      ------------------
+                       identifier block
+if reference block matches identifier block then we got the first letter. So this way we can obtain total flag ;)
+"""
