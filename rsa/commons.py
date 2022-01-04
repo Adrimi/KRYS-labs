@@ -6,7 +6,7 @@ def modular_multiplicative_inverse(p, q, e):
   return pow(e, -1, toitent_of_N(p, q))
 
 
-def decrypt(ciphertext, d, N):
+def decrypt(ciphertext: int, d: int, N: int) -> int:
   return pow(ciphertext, d, N)
 
 
