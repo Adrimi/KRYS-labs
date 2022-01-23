@@ -7,14 +7,15 @@ def main():
   e = 65537
   ct = 161367550346730604451454756189028938964941280347662098798775466019463375610700074840105776873791605070092554650190486030367121011578171525759600774739890458414593857709994072516290998135846956596662071379067305011746842247628316996977338024343628757374524136260758515864509435302781735938531030576289086798942
 
+  # n is a prime number ! always use two distinct prime numbers
   p = n
   q = p
   phi = toitent_of_N(p, q)
   d = inverse(e, phi)
 
-  result = pow(ct, d, n)
-  decrypted = long_to_bytes(result)
-  print(f'Decrypted is {decrypted}')
+  decrypted_message = decrypt(ct, d, n)
+  readable_message = long_to_bytes(decrypted_message)
+  print(f'Solution is {readable_message}')
 
 
 if __name__ == '__main__':

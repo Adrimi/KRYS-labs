@@ -22,8 +22,8 @@ def main():
   n = p * q
 
   flag = b"XXXXXXXXXXXXXXXXXXXXXXX"
-  pt = bytes_to_long(flag)
-  ct = pow(pt, e, n)
+  decrypted_message = bytes_to_long(flag)
+  ct = pow(decrypted_message, e, n)
 
   print(f"n = {n}")
   print(f"e = {e}")
@@ -33,17 +33,26 @@ def main():
   e = 3
   ct = 39207274348578481322317340648475596807303160111338236677373
 
+  # 1600 bits but thats over multiplication, really p and q has only 100 bits long
+  # taht allows sage tool to factor them easily from the N
   pq_factorio = factor(n)
+
+  # take first pair of p and q
   factorized = [int(t[0]) for t in pq_factorio]
+
+  # print them to check if thats correct
   print(factorized)
   p = factorized[0]
   q = factorized[1]
   phi = (p - 1) * (q - 1)
+
+  # calculate decryption key
   d = inverse(e, phi)
 
-  pt = pow(ct, d, n)
-  decrypted = long_to_bytes(pt)
-  print(f'Decrypted is {decrypted}')
+  # decrypt
+  decrypted_message = decrypt(ct, d, n)
+  readable_message = long_to_bytes(decrypted_message)
+  print(f'Solution is {readable_message}')
 
 
 if __name__ == '__main__':
