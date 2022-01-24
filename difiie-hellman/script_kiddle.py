@@ -13,7 +13,8 @@ def main():
   iv = 'c044059ae57b61821a9090fbdefc63c5'
   encrypted_flag = 'f60522a95bde87a9ff00dc2c3d99177019f625f3364188c1058183004506bf96541cf241dad1c0e92535564e537322d7'
 
-  # autor był dzbanem, bo metody do generowania sekretu używają operatora '^', który wcale nie jest potęgowaniem, a XORem xDDD
+  # autor był dzbanem, bo metody do generowania sekretu używają
+  # operatora '^', który wcale nie jest potęgowaniem, a XORem xDDD
   # wystarczy użyć właściwości odwracania xora i eldorado
   # public B stworzono jako: B = g ^ b % p
   # żeby otrzymać b, trzeba wyliczyć: b = g ^ B
@@ -69,10 +70,12 @@ def decrypt_flag(shared_secret: int, iv: str, ciphertext: str):
   return pkcs7_unpad(plaintext).decode('ascii')
 
 
+# to nie jest potegowanie
 def generate_public_int(g, a, p):
   return g ^ a % p
 
 
+# to tez niejest podegowanie
 def generate_shared_secret(A, b, p):
   return A ^ b % p
 
@@ -115,4 +118,5 @@ def main_main():
 
 
 if __name__ == '__main__':
-  main()
+  main_main()
+  # main()

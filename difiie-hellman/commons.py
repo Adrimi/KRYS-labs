@@ -1,6 +1,6 @@
 import hashlib
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+from Crypto.Util.Padding import unpad
 
 
 def is_pkcs7_padded(message):
@@ -18,7 +18,7 @@ def decrypt_flag(shared_secret: int, iv: str, ciphertext: str):
   iv = bytes.fromhex(iv)
   cipher = AES.new(key, AES.MODE_CBC, iv)
   plaintext = cipher.decrypt(ciphertext)
-  print(is_pkcs7_padded(plaintext))
+
   if is_pkcs7_padded(plaintext):
     return unpad(plaintext, 16).decode('ascii')
   else:
